@@ -4,11 +4,11 @@
     --Tertiary-color: #ED2929;
     --color-1: #E6D927;
     --color-2: #4A1A8D;
-    --Heading-font: 'Inter';
-    --Body-font: 'Roboto';
+    --Heading-font: 'Inter', sans-serif;
+    --Body-font: 'Roboto', sans-serif;
     --spacing-1: 8px;
     --spacing-2: 16px;
-    --spacing-3: 24px; 
+    --spacing-3: 24px;
     --spacing-4: 32px;
 }
 
@@ -18,105 +18,294 @@
     box-sizing: border-box;
 }
 
+/* ── Promo Bar ── */
 .discount {
-    padding: 1rem;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-family: var(--Body-font);
     color: rgb(120, 113, 113);
-    border-bottom: 1px solid;
+    border-bottom: 1px solid #e5e7eb;
     text-align: center;
+    padding: 8px 16px;
 }
 
+.discount .cta a {
+    color: var(--Primary-color);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.discount .cta a:hover {
+    text-decoration: none;
+}
+
+/* ── Header Grid ──
+   Row 1: Logo | (empty) | (empty) | Icons
+   Row 2: (empty) | Search ←——————→ | (empty)
+   Row 3: Menu | (empty) | Currency | Language
+*/
 .header-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    max-width: 800px;
-    margin: auto;
+    grid-template-columns: auto 1fr 1fr auto;  /* logo | search spans middle | icons */
+    grid-template-rows: auto auto auto;
+    align-items: center;
+    gap: 0 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
+/* Remove the generic .box padding so each cell controls its own spacing */
 .box {
-    padding: 20px;
-    text-align: center;
-    border-radius: 8px;
+    padding: 10px 8px;
 }
 
-.box:nth-child(1) {
+/* Row 1 */
+.logo.box {
     grid-column: 1;
     grid-row: 1;
+    padding: 12px 8px 12px 0;
 }
 
-.box:nth-child(2) {
+.nav-icons-1.box {
     grid-column: 4;
     grid-row: 1;
+    padding: 12px 0 12px 8px;
 }
 
-.box:nth-child(3) {
-    grid-column: 2 / 4;
+/* Row 2 */
+.search-bar.box {
+    grid-column: 1 / 5;   /* full width */
     grid-row: 2;
+    padding: 8px 0;
 }
 
-.box:nth-child(4) {
+/* Row 3 */
+.navigation.box {
     grid-column: 1;
     grid-row: 3;
+    padding: 8px 0;
 }
 
-.box:nth-child(5) {
+.currency.box {
     grid-column: 3;
     grid-row: 3;
+    padding: 8px 0;
 }
 
-.box:nth-child(6) {
+.lang.box {
     grid-column: 4;
     grid-row: 3;
+    padding: 8px 0;
+    text-align: right;
 }
 
+/* ── Logo ── */
 .logo {
     display: flex;
-    padding-left: 14px;
+    align-items: center;
+    gap: 10px;
 }
-
 
 .logo-name {
-    padding-top: 10px;
-    font-size: 24px;
-    font-family: 'Inter';
-    align-items: end;
+    font-size: 22px;
+    font-family: var(--Heading-font);
     font-weight: 800;
+    color: var(--Primary-color);
+    line-height: 1;
 }
 
+/* ── Nav Icons ── */
 .nav-icons-1 {
     display: flex;
-    gap: 8px;
-    padding-bottom: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
 }
 
+.nav-icons-1 img {
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+}
+
+.nav-icons-1 img:hover {
+    opacity: 1;
+}
+
+/* ── Search Bar ── */
+/* FIX: removed position:absolute and padding-top:5rem — those pulled it out of the grid */
 .search-bar {
     display: flex;
     width: 100%;
-    position: absolute;
-    padding-top: 5rem;
 }
 
 .search-bar input {
     flex: 1;
-    max-width: 500px;
-    height: 50px;
-    padding: 15px 0;
+    height: 44px;
+    padding: 0 var(--spacing-3);
     border: 2px solid #bfc3c7;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    padding-left: var(--spacing-3);
+    border-right: none;                   /* join cleanly to button */
+    border-radius: 8px 0 0 8px;
+    font-family: var(--Body-font);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+    border-color: var(--Primary-color);
 }
 
 .search-bar input::placeholder {
-    font-family: Arial;
+    color: #9ca3af;
+    font-family: var(--Body-font);
 }
 
 .search-bar button {
-    width: 50px;
-    background-color: #16089A;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border: 1px solid;
+    width: 52px;
+    height: 44px;
+    background-color: var(--Primary-color);
+    border: 2px solid var(--Primary-color);   /* FIX: was bare "border:1px solid" with no color */
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background-color 0.2s;
+}
+
+.search-bar button:hover {
+    background-color: #0d0670;
+}
+
+/* ── Navigation / Hamburger ── */
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navigation > span {
+    font-family: var(--Body-font);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #1f2937;
+}
+
+.hamburger-menu {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #1f2937;
+    line-height: 1;
+    padding: 2px 4px;
+}
+
+.hamburger-menu:hover {
+    color: var(--Primary-color);
+}
+
+/* Slide-out nav panel (toggled by JS) */
+#script {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    flex-direction: column;
+}
+
+#script.open {
+    display: flex;
+}
+
+.navigationX {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e7eb;
+    font-family: var(--Heading-font);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.navigationX button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+.navigationX button:hover {
+    color: #111827;
+}
+
+nav ul {
+    list-style: none;
+    padding: 12px 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 12px 20px;
+    font-family: var(--Body-font);
+    font-size: 15px;
+    color: #374151;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+}
+
+nav ul li a:hover {
+    background: #f3f4f6;
+    color: var(--Primary-color);
+}
+
+/* ── Currency & Language ── */
+.currency p,
+.lang p {
+    font-family: var(--Body-font);
+    font-size: 13px;
+    color: #374151;
+    cursor: pointer;
+}
+
+.currency {
+    text-align: center;
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+}
+
+.lang {
+    text-align: right;
+}
+
+/* ── Nav bar bottom border ── */
+.header-grid {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ── Responsive: mobile ── */
+@media (max-width: 600px) {
+    .header-grid {
+        grid-template-columns: 1fr auto;
+        padding: 0 16px;
+    }
+
+    .logo.box        { grid-column: 1; grid-row: 1; }
+    .nav-icons-1.box { grid-column: 2; grid-row: 1; }
+    .search-bar.box  { grid-column: 1 / 3; grid-row: 2; }
+    .navigation.box  { grid-column: 1; grid-row: 3; }
+    .currency.box    { grid-column: 2; grid-row: 3; border: none; }
+    .lang.box        { display: none; }         /* hide on very small screens */
 }
