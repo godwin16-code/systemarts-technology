@@ -90,7 +90,6 @@
 .currency.box {
     grid-column: 3;
     grid-row: 3;
-    padding: 8px 0;
 }
 
 .lang.box {
@@ -212,21 +211,45 @@
 }
 
 /* ----- Slide-out nav panel (toggled by JS) ---- */
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 900;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu-overlay.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
 #script {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 260px;
     height: 100vh;
     background: #ffffff;
-    box-shadow: 4px 0 16 rgba(0, 0, 0, 0.12);
+    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
     z-index: 1000;
     flex-direction: column;
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
 #script.open {
-    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
 
 .navigationX {
