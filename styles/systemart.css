@@ -4,11 +4,11 @@
     --Tertiary-color: #ED2929;
     --color-1: #E6D927;
     --color-2: #4A1A8D;
-    --Heading-font: 'Inter', sans-serif;
-    --Body-font: 'Roboto', sans-serif;
+    --Heading-font: 'Inter';
+    --Body-font: 'Roboto';
     --spacing-1: 8px;
     --spacing-2: 16px;
-    --spacing-3: 24px;
+    --spacing-3: 24px; 
     --spacing-4: 32px;
 }
 
@@ -18,53 +18,53 @@
     box-sizing: border-box;
 }
 
-/* ── Promo Bar ── */
+/* ----Promo Bar--- */
 .discount {
     font-size: 13px;
-    font-family: var(--Body-font);
+    font-family: Arial, Helvetica, sans-serif;
     color: rgb(120, 113, 113);
-    border-bottom: 1px solid #e5e7eb;
+    border-bottom: 1px solid #E5E7EB;
     text-align: center;
-    padding: 8px 16px;
+    padding: 8px 4px;
 }
 
 .discount .cta a {
-    color: var(--Primary-color);
     font-weight: 700;
-    text-decoration: underline;
+    color: var(--Primary-color);
+    text-decoration: underline ;
     text-underline-offset: 2px;
 }
 
 .discount .cta a:hover {
     text-decoration: none;
 }
-
-/* ── Header Grid ──
+/* -----Header Grid ----- 
    Row 1: Logo | (empty) | (empty) | Icons
    Row 2: (empty) | Search ←——————→ | (empty)
    Row 3: Menu | (empty) | Currency | Language
 */
+
 .header-grid {
     display: grid;
-    grid-template-columns: auto 1fr 1fr auto;  /* logo | search spans middle | icons */
+    grid-template-columns: auto 1fr 1fr auto;
     grid-template-rows: auto auto auto;
-    align-items: center;
     gap: 0 10px;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 24px;
+    align-items: center;
+    border-bottom: 1px solid #E5E7EB;
 }
 
-/* Remove the generic .box padding so each cell controls its own spacing */
 .box {
     padding: 10px 8px;
 }
 
-/* Row 1 */
+/* ----Row 1--- */
 .logo.box {
     grid-column: 1;
     grid-row: 1;
-    padding: 12px 8px 12px 0;
+    padding: 12px 0 12px 0;
 }
 
 .nav-icons-1.box {
@@ -73,14 +73,14 @@
     padding: 12px 0 12px 8px;
 }
 
-/* Row 2 */
+/* ----Row 2--- */
 .search-bar.box {
-    grid-column: 1 / 5;   /* full width */
+    grid-column: 1 / 5;
     grid-row: 2;
     padding: 8px 0;
 }
 
-/* Row 3 */
+/* ----Row 3 ----- */
 .navigation.box {
     grid-column: 1;
     grid-row: 3;
@@ -100,44 +100,45 @@
     text-align: right;
 }
 
-/* ── Logo ── */
+/* ---- Logo ---- */
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
 }
 
+
 .logo-name {
-    font-size: 22px;
+    font-size: 24px;
     font-family: var(--Heading-font);
     font-weight: 800;
     color: var(--Primary-color);
     line-height: 1;
+    opacity: 0.85;
 }
 
-/* ── Nav Icons ── */
+/* ---- Nav Icons ---- */
 .nav-icons-1 {
     display: flex;
+    gap: 12px;
     align-items: center;
     justify-content: flex-end;
-    gap: 12px;
 }
 
 .nav-icons-1 img {
     cursor: pointer;
     opacity: 0.75;
-    transition: opacity 0.2s;
+    transition: 0.2s;
 }
 
 .nav-icons-1 img:hover {
     opacity: 1;
 }
 
-/* ── Search Bar ── */
-/* FIX: removed position:absolute and padding-top:5rem — those pulled it out of the grid */
+/* ---- Search Bar ---- */
 .search-bar {
     display: flex;
     width: 100%;
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .search-bar input {
@@ -145,7 +146,6 @@
     height: 44px;
     padding: 0 var(--spacing-3);
     border: 2px solid #bfc3c7;
-    border-right: none;                   /* join cleanly to button */
     border-radius: 8px 0 0 8px;
     font-family: var(--Body-font);
     font-size: 14px;
@@ -158,15 +158,15 @@
 }
 
 .search-bar input::placeholder {
-    color: #9ca3af;
     font-family: var(--Body-font);
+    color: #9ca3af;
 }
 
 .search-bar button {
     width: 52px;
     height: 44px;
     background-color: var(--Primary-color);
-    border: 2px solid var(--Primary-color);   /* FIX: was bare "border:1px solid" with no color */
+    border: none;
     border-radius: 0 8px 8px 0;
     cursor: pointer;
     display: flex;
@@ -176,11 +176,15 @@
     transition: background-color 0.2s;
 }
 
-.search-bar button:hover {
-    background-color: #0d0670;
+.search-bar button img {
+    border-radius: 8px;
 }
 
-/* ── Navigation / Hamburger ── */
+.search-bar button:hover {
+    background-color: var(--Secondary-color);
+}
+
+/* ---- Navigation / Hamburger ---- */
 .navigation {
     display: flex;
     align-items: center;
@@ -192,16 +196,13 @@
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #1f2937;
 }
 
 .hamburger-menu {
-    background: none;
+   background: none;
     border: none;
-    font-size: 20px;
+    font-size: 24px;
     cursor: pointer;
-    color: #1f2937;
     line-height: 1;
     padding: 2px 4px;
 }
@@ -210,7 +211,7 @@
     color: var(--Primary-color);
 }
 
-/* Slide-out nav panel (toggled by JS) */
+/* ----- Slide-out nav panel (toggled by JS) ---- */
 #script {
     display: none;
     position: fixed;
@@ -219,7 +220,7 @@
     width: 260px;
     height: 100vh;
     background: #ffffff;
-    box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
+    box-shadow: 4px 0 16 rgba(0, 0, 0, 0.12);
     z-index: 1000;
     flex-direction: column;
 }
@@ -236,13 +237,13 @@
     border-bottom: 1px solid #e5e7eb;
     font-family: var(--Heading-font);
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 .navigationX button {
     background: none;
     border: none;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
     color: #6b7280;
 }
@@ -271,11 +272,11 @@ nav ul li a:hover {
     color: var(--Primary-color);
 }
 
-/* ── Currency & Language ── */
+/*  ----Currency & Language ---- */
 .currency p,
 .lang p {
     font-family: var(--Body-font);
-    font-size: 13px;
+    font-size: 14px;
     color: #374151;
     cursor: pointer;
 }
@@ -290,22 +291,9 @@ nav ul li a:hover {
     text-align: right;
 }
 
-/* ── Nav bar bottom border ── */
-.header-grid {
-    border-bottom: 1px solid #e5e7eb;
-}
-
-/* ── Responsive: mobile ── */
 @media (max-width: 600px) {
     .header-grid {
         grid-template-columns: 1fr auto;
         padding: 0 16px;
     }
-
-    .logo.box        { grid-column: 1; grid-row: 1; }
-    .nav-icons-1.box { grid-column: 2; grid-row: 1; }
-    .search-bar.box  { grid-column: 1 / 3; grid-row: 2; }
-    .navigation.box  { grid-column: 1; grid-row: 3; }
-    .currency.box    { grid-column: 2; grid-row: 3; border: none; }
-    .lang.box        { display: none; }         /* hide on very small screens */
 }
