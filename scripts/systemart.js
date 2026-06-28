@@ -50,7 +50,7 @@ function showSlides(index) {
 if (slides.length > 1) {
     setInterval(() => {
         showSlides(current + 1);
-    }, 9000);
+    }, 6000);
 }
 
 showSlides(0);
