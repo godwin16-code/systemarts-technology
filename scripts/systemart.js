@@ -28,3 +28,29 @@ if (overlay) {
         overlay.classList.remove("open");
     });
 }
+
+// -----Hero Slider ----- //
+
+const track = document.querySelector(".hero-track");
+const slides = Array.from(document.querySelectorAll(".hero-slider .slide"));
+
+let current = 0;
+
+function showSlides(index) {
+    if (!track || slides.length === 0) return;
+
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+
+    slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("active", slideIndex === current);
+    });
+}
+
+if (slides.length > 1) {
+    setInterval(() => {
+        showSlides(current + 1);
+    }, 9000);
+}
+
+showSlides(0);
