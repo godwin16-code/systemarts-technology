@@ -494,15 +494,15 @@ nav ul li a:hover {
 }
 
 .feature-title {
-    font-size: 24px;
-    font-weight: 700;
+    font-size: 180px;
+    font-weight: 600;
     color: #1a1a1a;
     font-family: var(--Body-font);
     margin-bottom: 3px;
 }
 
 .feature-sub {
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--Body-font);
     color: #6b6b5e;
 }
