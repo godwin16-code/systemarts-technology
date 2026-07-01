@@ -490,11 +490,11 @@ nav ul li a:hover {
 }
 
 .feature-item img {
-    width: 68px;
+    width: 58px;
 }
 
 .feature-title {
-    font-size: 180px;
+    font-size: 18px;
     font-weight: 600;
     color: #1a1a1a;
     font-family: var(--Body-font);
@@ -502,7 +502,7 @@ nav ul li a:hover {
 }
 
 .feature-sub {
-    font-size: 16px;
+    font-size: 15px;
     font-family: var(--Body-font);
     color: #6b6b5e;
 }
