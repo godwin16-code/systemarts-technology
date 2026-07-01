@@ -54,3 +54,29 @@ if (slides.length > 1) {
 }
 
 showSlides(0);
+
+
+// const scroller = document.getElementById('featScroll');
+// const thumb    = document.getElementById('scrollThumb');
+ 
+// function updateThumb() {
+//   // Ratio of visible width to total scrollable content width
+//   const visibleRatio = scroller.clientWidth / scroller.scrollWidth;
+//   const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
+ 
+//   // How far the user has scrolled, as a 0–1 fraction
+//   const scrollFraction = maxScrollLeft > 0
+//     ? scroller.scrollLeft / maxScrollLeft
+//     : 0;
+ 
+//   const thumbWidthPercent = visibleRatio * 100;
+ 
+//   thumb.style.width = thumbWidthPercent + '%';
+//   thumb.style.left = scrollFraction * (100 - thumbWidthPercent) + '%';
+// }
+ 
+// scroller.addEventListener('scroll', updateThumb);
+// window.addEventListener('resize', updateThumb);
+ 
+// // Run once on load to set initial thumb size
+// updateThumb();
