@@ -1,32 +1,61 @@
+// -----Get Menu Navigation -----///
 const hamburgerIcon = document.getElementById("hamburger");
 const navPanel = document.getElementById("script");
 const closeButton = document.querySelector(".navigationX button");
 const overlay = document.getElementById("overlay");
 
-function toggleMenu() {
-    hamburgerIcon.classList.toggle("open");
-    navPanel.classList.toggle("open");
+// ------Get Categories Navigation ------- //
+const hamburgerIconCat = document.getElementById("hamburgerCat");
+const navPanelCat = document.getElementById("scriptCat");
+const closeButtonCat = document.querySelector(".navigationXCat button");
+const overlayCat = document.getElementById("overlayCat");
+
+// Create and display an open toggle menu function //
+function togglePanel(icon, panel, overlay) {
+    icon.classList.toggle("open");
+    panel.classList.toggle("open");
     overlay.classList.toggle("open");
 }
 
 if (hamburgerIcon && navPanel && overlay) {
-    hamburgerIcon.addEventListener("click", toggleMenu);
+    hamburgerIcon.addEventListener("click", () => togglePanel(hamburgerIcon, navPanel, overlay));
+}
+
+if (hamburgerIconCat && navPanelCat && overlayCat) {
+    hamburgerIconCat.addEventListener("click", () => togglePanel(hamburgerIconCat, navPanelCat, overlayCat));
+}
+
+// Close Button Display //
+function closeButtonDisplay(panel, icon, overlay) {
+    panel.classList.remove("open");
+    icon.classList.remove("open");
+    overlay.classList.remove("open");
+}
+
+if (closeButtonCat && navPanelCat && hamburgerIconCat && overlayCat) {
+    closeButtonCat.addEventListener("click", () => closeButtonDisplay(navPanelCat, hamburgerIconCat, overlayCat));
 }
 
 if (closeButton && navPanel && hamburgerIcon && overlay) {
-    closeButton.addEventListener("click", () => {
-        navPanel.classList.remove("open");
-        hamburgerIcon.classList.remove("open");
+    closeButton.addEventListener("click", () => closeButtonDisplay(navPanel, hamburgerIcon, overlay));
+}
+
+// Overlay Display //
+function overlayDisplay(panel, icon, overlay) {
+    overlay.addEventListener("click", () => {
+        panel.classList.remove("open");
+        icon.classList.remove("open")
         overlay.classList.remove("open");
     });
 }
 
 if (overlay) {
-    overlay.addEventListener("click", () => {
-        navPanel.classList.remove("open");
-        hamburgerIcon.classList.remove("open");
-        overlay.classList.remove("open");
-    });
+    overlay.addEventListener("click", () => overlayDisplay(navPanel, hamburgerIcon, overlay));
+
+}
+
+if (overlayCat) {
+    overlayCat.addEventListener("click", () => overlayDisplay(navPanelCat, hamburgerIconCat, overlayCat));
 }
 
 // -----Hero Slider ----- //
@@ -54,29 +83,3 @@ if (slides.length > 1) {
 }
 
 showSlides(0);
-
-
-// const scroller = document.getElementById('featScroll');
-// const thumb    = document.getElementById('scrollThumb');
- 
-// function updateThumb() {
-//   // Ratio of visible width to total scrollable content width
-//   const visibleRatio = scroller.clientWidth / scroller.scrollWidth;
-//   const maxScrollLeft = scroller.scrollWidth - scroller.clientWidth;
- 
-//   // How far the user has scrolled, as a 0–1 fraction
-//   const scrollFraction = maxScrollLeft > 0
-//     ? scroller.scrollLeft / maxScrollLeft
-//     : 0;
- 
-//   const thumbWidthPercent = visibleRatio * 100;
- 
-//   thumb.style.width = thumbWidthPercent + '%';
-//   thumb.style.left = scrollFraction * (100 - thumbWidthPercent) + '%';
-// }
- 
-// scroller.addEventListener('scroll', updateThumb);
-// window.addEventListener('resize', updateThumb);
- 
-// // Run once on load to set initial thumb size
-// updateThumb();

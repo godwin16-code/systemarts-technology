@@ -216,7 +216,7 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.35);
-    z-index: 900;
+    z-index: 1000;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -229,7 +229,7 @@
     pointer-events: auto;
 }
 
-#script {
+#script, #scriptCat {
     position: fixed;
     top: 0;
     left: 0;
@@ -237,7 +237,7 @@
     height: 100vh;
     background: #ffffff;
     box-shadow: 4px 0 16px rgba(0, 0, 0, 0.12);
-    z-index: 1000;
+    z-index: 1001;
     flex-direction: column;
     transform: translateX(-100%);
     opacity: 0;
@@ -246,14 +246,18 @@
     transition: transform 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
 }
 
-#script.open {
+#scriptCat {
+    width: 300px;
+}
+
+#script.open, #scriptCat.open {
     transform: translateX(0);
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
-.navigationX {
+.navigationX, .navigationXCat {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -264,7 +268,7 @@
     font-size: 18px;
 }
 
-.navigationX button {
+.navigationX button, .navigationXCat button {
     background: none;
     border: none;
     font-size: 24px;
@@ -272,9 +276,11 @@
     color: #6b7280;
 }
 
-.navigationX button:hover {
+.navigationX button:hover, .navigationX button:hover {
     color: #111827;
 }
+
+
 
 nav ul {
     list-style: none;
@@ -500,4 +506,37 @@ nav ul li a:hover {
     font-size: 12px;
     font-family: var(--Body-font);
     color: #6b6b5e;
+}
+
+/* -----Categories Icon ------ */
+.categories-icon {
+    padding: 12px 12px 12px 8px;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: var(--Primary-color);
+    border-radius: 0 18px 18px 0;
+    position: fixed;
+    z-index: 1000;
+    margin-top: 1rem;
+}
+
+.categories-icon span {
+    height: 2px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.categories-icon span:nth-child(1) {
+    width: 28px;
+}
+
+.categories-icon span:nth-child(2) {
+    width: 18px;
+}
+
+.categories-icon span:nth-child(3) {
+    width: 24px;
 }
