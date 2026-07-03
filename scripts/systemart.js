@@ -41,27 +41,24 @@ if (closeButton && navPanel && hamburgerIcon && overlay) {
 }
 
 // Overlay Display //
-function overlayDisplay(panel, icon, overlay) {
-    overlay.addEventListener("click", () => {
-        panel.classList.remove("open");
-        icon.classList.remove("open")
-        overlay.classList.remove("open");
-    });
+function closePanel(panel, icon, overlay) {
+    panel.classList.remove("open");
+    icon.classList.remove("open");
+    overlay.classList.remove("open");
 }
 
-if (overlay) {
-    overlay.addEventListener("click", () => overlayDisplay(navPanel, hamburgerIcon, overlay));
-
+if (overlay && navPanel && hamburgerIcon) {
+    overlay.addEventListener("click", () => closePanel(navPanel, hamburgerIcon, overlay));
 }
 
-if (overlayCat) {
-    overlayCat.addEventListener("click", () => overlayDisplay(navPanelCat, hamburgerIconCat, overlayCat));
+if (overlayCat && navPanelCat && hamburgerIconCat) {
+    overlayCat.addEventListener("click", () => closePanel(navPanelCat, hamburgerIconCat, overlayCat));
 }
 
 // -----Hero Slider ----- //
 
 const track = document.querySelector(".hero-track");
-const slides = Array.from(document.querySelectorAll(".hero-slider .slide"));
+const slides = track ? Array.from(track.querySelectorAll(".slide")) : [];
 
 let current = 0;
 
