@@ -338,34 +338,22 @@ nav ul li a:hover {
 .hero-slider {
     width: 100%;
     overflow: hidden;
-    /* max-width: 500px;
-    aspect-ratio: 16 / 13;
-    margin: 8px auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 8px; */
     margin: 12px auto;
 }
 
 .hero-track {
     display: flex;
-    /* width: 100%;
-    height: 100%;
-    transition: transform 0.8s ease-in-out; */
     transition: transform 0.8s ease-in-out;
 }
 
 .slide {
-    /* flex: 0 0 100%; */
     position: relative;
-    height: 290px;
+    min-height: 290px;
     min-width: 100%;
 }
 
 .slide img {
     width: 100%;
-    /* height: 100%;
-    object-fit: cover; */
     display: block;
     border-radius: 8px;
     height: 100%;
@@ -376,33 +364,18 @@ nav ul li a:hover {
 .label {
     position: absolute;
     top: 45%;
-    right: 5px;
+    right: 12px;
     transform: translateY(-50%);
     max-width: 450px;
     color: #fff;
     font-family: var(--Body-font);
-    /* display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    max-width: min(80%, 260px);
-    width: auto;
-    padding: clamp(10px, 2vw, 16px);
-    border-radius: 8px;
-    color: #e5e7eb;
-    font-family: var(--Body-font);
-    font-size: clamp(16px, 2.2vw, 24px);
-    line-height: 1.2;
-    box-sizing: border-box;
-    overflow-wrap: anywhere;
-    word-break: break-word;
-    z-index: 1; */
 }
 
 .label h1 {
     font-size: 1.3rem;
     line-height: 1.4;
     margin-bottom: 20px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .label p {
@@ -427,71 +400,76 @@ nav ul li a:hover {
 
 .label button:hover {
     background: #111827;
+    text-decoration: none;
 }
 
-/* .slide:first-of-type .label {
-    right: clamp(0.5rem, 2vw, 1rem);
-    top: 50%;
+/* -----Sub Banner------ */
+
+.sub-banner {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.sub-banner img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.sub-banner-label {
+    position: absolute;
+    top: 80%;
+    right: 10%;
     transform: translateY(-50%);
-    align-items: flex-end;
-    text-align: left;
-}
-
-
-.slide:nth-of-type(2) .label {
-    left: clamp(0.5rem, 2vw, 1rem);
-    bottom: clamp(0.75rem, 3vw, 1.5rem);
-}
-
-.red {
-    right: 0;
-    top: 50%;
-    text-align: center;
-    margin-left: 170px;
-}
-
-.slide .label span:first-child {
-    font-weight: 700;
-}
-
-.slide .label span:nth-child(2) {
-    font-size: clamp(12px, 1.4vw, 15px);
-}
-
-.price {
-    font-size: clamp(14px, 1.8vw, 18px);
-}
-
-.slide .label button {
-    align-self: flex-start;
-    border: none;
-    border-radius: 12px;
-    padding: clamp(6px, 1.3vw, 10px) clamp(10px, 1.8vw, 14px);
-    background: var(--Primary-color);
-    color: white;
-    cursor: pointer;
-    align-self: center;
+    max-width: 450px;
     font-family: var(--Body-font);
+    color: #000;
+}
+
+.sub-banner h1 {
+    font-size: 1.7rem;
+    line-height: 1.9rem;
     font-weight: 600;
-    font-size: clamp(12px, 1.4vw, 15px);
+    margin-bottom: 20px;
 }
 
-@media (max-width: 600px) {
-    .slide .label {
-        max-width: min(86%, 240px);
-        gap: 0.4rem;
-        padding: 10px 12px;
-    }
-
-    .slide:first-of-type .label,
-    .slide:nth-of-type(2) .label {
-        bottom: 12px;
-    }
+.sub-banner p {
+    margin-bottom: 12px;
+    font-size: 1rem;
 }
 
-.slide .label button:hover {
-    background: #111827;
-} */
+.sub-banner strong {
+    font-size: 1.3rem;
+}
+
+.sub-banner button {
+    padding: 6px 8px;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    cursor: pointer;
+}
+
+.sub-banner button:hover {
+    background-color: #111827;
+    color: #fff;
+    text-decoration: none;
+}
+
+.sub-banner-label-2 {
+    position: absolute;
+    top: 112%;
+    right: 38%;
+    transform: translateY(-50%);
+    max-width: 450px;
+    font-family: var(--Body-font);
+    color: #fff;
+}
+
+.sub-banner-label-2 button {
+    color: #fff;
+}
 
 .slide.active {
     opacity: 1;
