@@ -406,40 +406,48 @@ nav ul li a:hover {
 /* -----Sub Banner------ */
 
 .sub-banner {
+    position: relative;
     width: 100%;
     overflow: hidden;
     margin-top: 20px;
-}
-
-.sub-banner img {
-    width: 100%;
     border-radius: 8px;
 }
 
-.sub-banner-label {
+.sub-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.sub-banner-label,
+.sub-banner-label-2 {
     position: absolute;
-    top: 80%;
-    right: 10%;
-    transform: translateY(-50%);
-    max-width: 450px;
+    bottom: 20%;
+    z-index: 1;
+    max-width: min(88%, 320px);
     font-family: var(--Body-font);
+}
+
+.sub-banner-label {
+    right: 8%;
     color: #000;
 }
 
 .sub-banner h1 {
-    font-size: 1.7rem;
-    line-height: 1.9rem;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    line-height: 1.2;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 
 .sub-banner p {
-    margin-bottom: 12px;
-    font-size: 1rem;
+    margin-bottom: 10px;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
 }
 
 .sub-banner strong {
-    font-size: 1.3rem;
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
 }
 
 .sub-banner button {
@@ -458,12 +466,7 @@ nav ul li a:hover {
 }
 
 .sub-banner-label-2 {
-    position: absolute;
-    top: 112%;
-    right: 38%;
-    transform: translateY(-50%);
-    max-width: 450px;
-    font-family: var(--Body-font);
+    left: 8%;
     color: #fff;
 }
 
