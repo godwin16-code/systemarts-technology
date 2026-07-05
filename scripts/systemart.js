@@ -80,3 +80,86 @@ if (slides.length > 1) {
 }
 
 showSlides(0);
+
+// Categories Product //
+const slider = document.querySelector(".categories-slider");
+const cards = document.querySelector(".cards");
+const dots = document.querySelectorAll(".dot");
+
+let currentIndex = 0;
+
+const totalPages = 4; // 8 cards ÷ 2 cards each
+
+let startX = 0;
+let endX = 0;
+
+// Update Slider
+function updateSlider(){
+
+    cards.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    dots[currentIndex].classList.add("active");
+
+}
+
+// Touch Start
+slider.addEventListener("touchstart",(e)=>{
+
+    startX = e.touches[0].clientX;
+
+});
+
+// Touch End
+slider.addEventListener("touchend",(e)=>{
+
+    endX = e.changedTouches[0].clientX;
+
+    handleSwipe();
+
+});
+
+function handleSwipe(){
+
+    let distance = startX - endX;
+
+    // Swipe Left
+    if(distance > 50){
+
+        if(currentIndex < totalPages - 1){
+
+            currentIndex++;
+
+            updateSlider();
+
+        }
+
+    }
+
+    // Swipe Right
+    else if(distance < -50){
+
+        if(currentIndex > 0){
+
+            currentIndex--;
+
+            updateSlider();
+
+        }
+
+    }
+
+}
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        currentIndex = index;
+
+        updateSlider();
+
+    });
+
+});
