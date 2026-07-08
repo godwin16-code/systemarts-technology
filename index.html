@@ -15,60 +15,88 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <script src="scripts/systemart.js" defer></script>
+    <!-- <script src="scripts/systemart.js" defer></script> -->
 
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="discount">
             <p>Get Upto 35% Cashback On First Order: GET35OFF <br> - <span class="cta"><a href="#">SHOP NOW</a></span></p>
         </div>
-        <div class="header-grid">
-            <div class="logo box">
-                <img src="systemart-asssets/images/logo.webp" alt="site-logo" width="48" height="48">
-                <span class="logo-name">Sytemarts</span>
-            </div>
-            <div class="nav-icons-1 box">
-                <img src="systemart-asssets/icon/account-svgrepo-com.svg" alt="user" width="25">
-                <img src="systemart-asssets/icon/love-svgrepo-com.svg" alt="likes" width="30">
-                <img src="systemart-asssets/icon/cart-shopping-svgrepo-com.svg" alt="cart" width="30">
-            </div>
-            <div class="search-bar box">
-                <!-- <form action=""> -->
-                    <input type="search" name="query" id="search" placeholder="Search">
-                    <button type="submit">
-                        <img src="systemart-asssets/icon/search-svgrepo-com.svg" alt="search-icon" width="25">
-                    </button>
-                <!-- </form> -->
-            </div>
-            <div class="navigation box">
-                <button class="hamburger-menu" id="hamburger" aria-label="toggle navigation">&#9776;
-                    <span class="menu">Menu</span>
-                </button>
-                <div id="overlay" class="menu-overlay" aria-hidden="true"></div>
-                <div id="script">
-                    <div class="navigationX">
-                        <span>Menu</span>
-                        <button>X</button>
-                    </div>
-                    <nav>
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Collections</a></li>
-                            <li><a href="#">Smart Devices</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div class="currency box">
-                <p>USD $</p>
-            </div>
-            <div class="lang box">
-                <p>English</p>
-            </div>
+            <!-- Top Row -->
+    <div class="top-header">
+
+        <!-- Logo -->
+        <div class="logo">
+            <img src="systemart-asssets/images/logo.webp" alt="Logo">
+            <span class="logo-name">Systemarts</span>
         </div>
+
+        <!-- Icons -->
+        <div class="header-icons">
+
+            <a href="#">
+                <img src="systemart-asssets/icon/account-svgrepo-com.svg" alt="account">
+            </a>
+
+            <a href="#" class="icon">
+                <img src="systemart-asssets/icon/love-svgrepo-com.svg" alt="favourite">
+                <span class="badge">0</span>
+            </a>
+
+            <a href="#" class="icon">
+                <img src="systemart-asssets/icon/cart-shopping-svgrepo-com.svg" alt="cart">
+                <span class="badge">0</span>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Search -->
+    <div class="search-bar">
+
+        <input type="search" placeholder="Search">
+
+        <button>
+            <img src="systemart-asssets/icon/search-svgrepo-com.svg" alt="search-icon">
+        </button>
+
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-header">
+
+        <button class="hamburger-menu" id="hamburger" aria-label="toggle navigation">
+            &#9776;
+            <span>MENU</span>
+        </button>
+        <div id="overlay" class="menu-overlay" aria-hidden="true"></div>
+        <div id="script">
+            <div class="navigationX">
+                <span>Menu</span>
+                <button>X</button>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Collections</a></li>
+                    <li><a href="#">Smart Devices</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="right-menu">
+
+            <button>USD $</button>
+
+            <button>English</button>
+
+        </div>
+
+    </div>
     </header>
     <main>
         <div class="categories-icon" id="hamburgerCat" aria-label="toggle navigation">
@@ -225,12 +253,7 @@
                     </div>
                 </div>
             </div>
-            <div class="dots">
-                    <span class="dot active"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
+            <div class="dots"></div>
         </section>
         <section></section>
         <section></section>

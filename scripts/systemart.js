@@ -82,47 +82,75 @@ if (slides.length > 1) {
 showSlides(0);
 
 // Categories Product //
+
 const slider = document.querySelector(".categories-slider");
 const cards = document.querySelector(".cards");
-const dots = document.querySelectorAll(".dot");
+const card = document.querySelectorAll(".card");
+const dotsContainer = document.querySelector(".dots");
+
+const cardsPerPage = 2;
+const totalPages = Math.ceil(card.length / cardsPerPage);
 
 let currentIndex = 0;
 
-const totalPages = 4; // 8 cards ÷ 2 cards each
+// Create dots automatically
+for(let i = 0; i < totalPages; i++){
 
-let startX = 0;
-let endX = 0;
+    const dot = document.createElement("span");
 
-// Update Slider
+    dot.classList.add("dot");
+
+    if(i === 0){
+        dot.classList.add("active");
+    }
+
+    dotsContainer.appendChild(dot);
+
+}
+
+const dots = document.querySelectorAll(".dot");
+
+// Update slider
 function updateSlider(){
 
     cards.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-    dots.forEach(dot => dot.classList.remove("active"));
+    dots.forEach(dot=>{
+        dot.classList.remove("active");
+    });
 
     dots[currentIndex].classList.add("active");
 
 }
 
-// Touch Start
+// Click dots
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        currentIndex = index;
+
+        updateSlider();
+
+    });
+
+});
+
+// Swipe Support
+let startX = 0;
+let endX = 0;
+
 slider.addEventListener("touchstart",(e)=>{
 
     startX = e.touches[0].clientX;
 
 });
 
-// Touch End
 slider.addEventListener("touchend",(e)=>{
 
     endX = e.changedTouches[0].clientX;
 
-    handleSwipe();
-
-});
-
-function handleSwipe(){
-
-    let distance = startX - endX;
+    const distance = startX - endX;
 
     // Swipe Left
     if(distance > 50){
@@ -150,16 +178,28 @@ function handleSwipe(){
 
     }
 
-}
+});
 
-dots.forEach((dot,index)=>{
+// View All //
+const viewCard = document.querySelectorAll(".card");
 
-    dot.addEventListener("click",()=>{
+viewCard.forEach(card => {
+    const text = card.querySelector("p");
+    const originalText = text.textContent;
 
-        currentIndex = index;
+    function showViewAll() {
+        text.textContent = "View All";
+        text.classList.add("view-all");
+    }
 
-        updateSlider();
+    function restoreText() {
+        text.textContent = originalText;
+        text.classList.remove("view-all");
+    }
 
-    });
+    card.addEventListener("mouseenter", showViewAll);
+    card.addEventListener("mouseleave", restoreText);
 
+    card.addEventListener("touchstart", showViewAll);
+    card.addEventListener("touchend", restoreText);
 });

@@ -44,143 +44,137 @@
    Row 3: Menu | (empty) | Currency | Language
 */
 
-.header-grid {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr auto;
-    grid-template-rows: auto auto auto;
-    gap: 0 10px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 24px;
-    align-items: center;
-    border-bottom: 1px solid #E5E7EB;
+.header{
+    width:100%;
 }
 
-.box {
-    padding: 10px 8px;
+.top-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
 }
 
-/* ----Row 1--- */
-.logo.box {
-    grid-column: 1;
-    grid-row: 1;
-    padding: 12px 0 12px 0;
+.logo{
+    display:flex;
+    align-items:center;
 }
 
-.nav-icons-1.box {
-    grid-column: 4;
-    grid-row: 1;
-    padding: 12px 0 12px 8px;
+.logo img{
+    width: 45px;
 }
 
-/* ----Row 2--- */
-.search-bar.box {
-    grid-column: 1 / 5;
-    grid-row: 2;
-    padding: 8px 0;
-}
-
-/* ----Row 3 ----- */
-.navigation.box {
-    grid-column: 1;
-    grid-row: 3;
-    padding: 8px 0;
-}
-
-.currency.box {
-    grid-column: 3;
-    grid-row: 3;
-}
-
-.lang.box {
-    grid-column: 4;
-    grid-row: 3;
-    padding: 8px 0;
-    text-align: right;
-}
-
-/* ---- Logo ---- */
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-
-.logo-name {
-    font-size: 24px;
+.logo-name{
+    font-size:1.5rem;
+    font-weight:bold;
     font-family: var(--Heading-font);
-    font-weight: 800;
     color: var(--Primary-color);
-    line-height: 1;
-    opacity: 0.85;
+    opacity: 0.8;
 }
 
-/* ---- Nav Icons ---- */
-.nav-icons-1 {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    justify-content: flex-end;
+.header-icons{
+    display:flex;
+    gap:18px;
 }
 
-.nav-icons-1 img {
-    cursor: pointer;
-    opacity: 0.75;
-    transition: 0.2s;
+.icon{
+    position:relative;
 }
 
-.nav-icons-1 img:hover {
+.header-icons img{
+    width:25px;
+    opacity: 0.8;
+}
+
+.header-icons img:hover {
     opacity: 1;
 }
 
-/* ---- Search Bar ---- */
-.search-bar {
-    display: flex;
-    width: 100%;
-    border-bottom: 1px solid #e5e7eb;
+.badge{
+    position:absolute;
+    top:-6px;
+    right:-6px;
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background: var(--Primary-color);
+    color:#fff;
+    font-size:11px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.search-bar input {
-    flex: 1;
-    height: 44px;
-    padding: 0 var(--spacing-3);
-    border: 2px solid #bfc3c7;
-    border-radius: 8px 0 0 8px;
-    font-family: var(--Body-font);
-    font-size: 14px;
-    outline: none;
-    transition: border-color 0.2s;
+.search-bar{
+    display:flex;
+    margin:0 15px 15px;
 }
 
-.search-bar input:focus {
-    border-color: var(--Primary-color);
+.search-bar input{
+    flex:1;
+    height:45px;
+    border:2px solid #ddd;
+    padding-left:15px;
+    border-radius: 4px 0 0 4px;
 }
 
-.search-bar input::placeholder {
-    font-family: var(--Body-font);
-    color: #9ca3af;
-}
-
-.search-bar button {
-    width: 52px;
-    height: 44px;
-    background-color: var(--Primary-color);
-    border: none;
-    border-radius: 0 8px 8px 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: background-color 0.2s;
-}
-
-.search-bar button img {
-    border-radius: 8px;
+.search-bar button{
+    width:55px;
+    border:none;
+    background: var(--Primary-color);
+    border-radius: 0 4px 4px 0;
 }
 
 .search-bar button:hover {
-    background-color: var(--Secondary-color);
+    background: var(--Secondary-color);
+}
+
+.search-bar img{
+    width:26px;
+    border-radius: 8px;
+}
+
+.bottom-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid #ddd;
+    padding:15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* .hamburger-menu{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:none;
+    border:none;
+    font-weight:bold;
+} */
+
+.hamburger-menu span {
+    font-family: var(--Body-font);
+    font-size: 1rem;
+}
+
+.right-menu{
+    display:flex;
+    font-family: var(--Body-font);
+}
+
+.right-menu button{
+    background:none;
+    border:none;
+    padding:0 8px;
+    font-size:15px;
+    cursor: pointer;
+}
+
+
+.right-menu button:first-child{
+    border-right:1px solid #ddd;
+    padding: 0 12px;
+    margin: 0 12px;
 }
 
 /* ---- Navigation / Hamburger ---- */
@@ -197,14 +191,18 @@
     text-transform: uppercase;
 }
 
-
 .hamburger-menu {
-   background: none;
+    background: none;
     border: none;
     font-size: 24px;
     cursor: pointer;
     line-height: 1;
     padding: 2px 4px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:none;
+    font-weight:bold;
 }
 
 .hamburger-menu:hover {
@@ -300,32 +298,6 @@ nav ul li a {
 nav ul li a:hover {
     background: #f3f4f6;
     color: var(--Primary-color);
-}
-
-/*  ----Currency & Language ---- */
-.currency p,
-.lang p {
-    font-family: var(--Body-font);
-    font-size: 14px;
-    color: #374151;
-    cursor: pointer;
-}
-
-.currency {
-    text-align: center;
-    border-left: 1px solid #e5e7eb;
-    border-right: 1px solid #e5e7eb;
-}
-
-.lang {
-    text-align: right;
-}
-
-@media (max-width: 600px) {
-    .header-grid {
-        grid-template-columns: 1fr auto;
-        padding: 0 16px;
-    }
 }
 
 /* ----- Hero - Section ----- */
@@ -559,8 +531,8 @@ nav ul li a:hover {
 
 /* -----Categories Product----- */
 .categories {
-    width: 90%;
-    margin: 14px auto;
+    /* width: 90%; */
+    margin: 40px 14px;
 }
 
 .categories h2 {
@@ -574,7 +546,7 @@ nav ul li a:hover {
 
 .cards {
     display: flex;
-    transition: .5s ease;
+    transition: .4s ease;
 }
 
 .card {
@@ -592,14 +564,19 @@ nav ul li a:hover {
 
 .card h3 {
     margin-top: 12px;
-    font-size: 18px;
+    font-size: 16px;
     font-family: var(--Body-font);
+    opacity: 0.9;
 }
 
 .card p {
     color: gray;
     margin-top: 8px;
     font-family: var(--Body-font);
+}
+
+.card p.view-all:hover {
+    text-decoration: none;
 }
 
 .dots {
@@ -618,4 +595,12 @@ nav ul li a:hover {
 
 .dot.active {
     background: #2563eb;
+}
+
+.card p.view-all {
+    color: var(--Primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
