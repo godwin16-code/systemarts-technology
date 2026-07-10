@@ -1,0 +1,112 @@
+/* Large screen header layout and search bar styling */
+
+@media (min-width: 750px) {
+
+    /* discount */
+
+    .discount br {
+        display: none;
+    }
+
+    .discount {
+        font-size: 1rem;
+    }
+
+    .header {
+        position: relative;
+    }
+
+    .top-header {
+        padding: 35px 28px;
+    }
+
+    .logo img {
+        width: 60px;
+        font-weight: 900;
+    }
+
+    .logo-name {
+        font-size: 1.6rem;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .desktop-search-bar {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        margin: 0 24px 0 60px;
+        align-items: center;
+    }
+
+    .desktop-search-bar input {
+        flex: 1;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .desktop-search-bar button {
+        height: 45px;
+    }
+    
+}
+
+@media (min-width: 990px) {
+    .right-menu {
+        display: none;
+    }
+
+    .top-header .desktop-feature-item {
+        display: flex;
+        border-right: 1px solid #ddd;
+        padding: 12px;
+        max-width: 200px;
+        height: 45px;
+        margin-right: 28px;
+    }
+
+    .top-header .desktop-feature-item .feature-title {
+        font-size: 15px;
+        font-weight: 400;
+        font-family: "inter";
+    }
+    .top-header .desktop-feature-item .feature-sub {
+        font-weight: 500;
+        font-size: 16px;
+        color: #000;
+        line-height: 1.4;
+        cursor: pointer;
+    }
+    .top-header .desktop-feature-item img {
+        width: 34px;
+    }
+
+    .header-icons img {
+        width: 28px;
+    }
+
+    .header-icons {
+        gap: 24px;
+    }
+
+    .desktop-right-menu {
+        display: flex;
+    }
+
+    .discount {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 18px 12px 38px;
+    }
+
+    .badge {
+        width: 20px;
+        height: 20px;
+        top: -8px;
+        right: -8px;
+        font-size: 14px;
+    }
+
+}

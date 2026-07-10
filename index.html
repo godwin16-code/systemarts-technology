@@ -9,94 +9,138 @@
     <meta name="description" content="Experience the best of technology">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/systemart.css">
+    <link rel="stylesheet" href="styles/systemart-large.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!-- <script src="scripts/systemart.js" defer></script> -->
+    <script src="scripts/systemart.js" defer></script>
 
 </head>
 <body>
     <header class="header">
         <div class="discount">
             <p>Get Upto 35% Cashback On First Order: GET35OFF <br> - <span class="cta"><a href="#">SHOP NOW</a></span></p>
+            <div class="right-menu desktop-right-menu">
+
+                <button class="menu-btn">
+                    USD $
+                    <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+
+                <button class="menu-btn">
+                    English
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+
+            </div>
         </div>
             <!-- Top Row -->
-    <div class="top-header">
+        <div class="top-header">
 
-        <!-- Logo -->
-        <div class="logo">
-            <img src="systemart-asssets/images/logo.webp" alt="Logo">
-            <span class="logo-name">Systemarts</span>
-        </div>
-
-        <!-- Icons -->
-        <div class="header-icons">
-
-            <a href="#">
-                <img src="systemart-asssets/icon/account-svgrepo-com.svg" alt="account">
-            </a>
-
-            <a href="#" class="icon">
-                <img src="systemart-asssets/icon/love-svgrepo-com.svg" alt="favourite">
-                <span class="badge">0</span>
-            </a>
-
-            <a href="#" class="icon">
-                <img src="systemart-asssets/icon/cart-shopping-svgrepo-com.svg" alt="cart">
-                <span class="badge">0</span>
-            </a>
-
-        </div>
-
-    </div>
-
-    <!-- Search -->
-    <div class="search-bar">
-
-        <input type="search" placeholder="Search">
-
-        <button>
-            <img src="systemart-asssets/icon/search-svgrepo-com.svg" alt="search-icon">
-        </button>
-
-    </div>
-
-    <!-- Bottom Navigation -->
-    <div class="bottom-header">
-
-        <button class="hamburger-menu" id="hamburger" aria-label="toggle navigation">
-            &#9776;
-            <span>MENU</span>
-        </button>
-        <div id="overlay" class="menu-overlay" aria-hidden="true"></div>
-        <div id="script">
-            <div class="navigationX">
-                <span>Menu</span>
-                <button>X</button>
+            <!-- Logo -->
+            <div class="logo">
+                <img src="systemart-asssets/images/logo.webp" alt="Logo">
+                <span class="logo-name">SYSTEMARTS</span>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Collections</a></li>
-                    <li><a href="#">Smart Devices</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+
+            <!-- Search bar for desktop -->
+            <div class="search-bar desktop-search-bar">
+                <input type="search" placeholder="Search">
+                <button>
+                    <img src="systemart-asssets/icon/search-svgrepo-com.svg" alt="search-icon">
+                </button>
+            </div>
+
+            <!-- Customer Hotline -->
+            <div class="feature-item desktop-feature-item">
+                <img src="systemart-asssets/icon/customer-service-svgrepo-com.svg" alt="hotline">
+                    <div class="feature-text desktop-feature-text">
+                        <p class="feature-title">Call Now:</p>
+                        <p class="feature-sub" aria-label="tel: 08172955222"><strong>08172955222</strong></p>
+                    </div>
+            </div>
+            <!-- Icons -->
+            <div class="header-icons">
+
+                <a href="#">
+                    <img src="systemart-asssets/icon/account-svgrepo-com.svg" alt="account">
+                </a>
+
+                <a href="#" class="icon">
+                    <img src="systemart-asssets/icon/love-svgrepo-com.svg" alt="favourite">
+                    <span class="badge">0</span>
+                </a>
+
+                <a href="#" class="icon">
+                    <img src="systemart-asssets/icon/cart-shopping-svgrepo-com.svg" alt="cart">
+                    <span class="badge">0</span>
+                </a>
+
+            </div>
+
         </div>
 
-        <div class="right-menu">
+        <!-- Search -->
+        <div class="search-bar">
 
-            <button>USD $</button>
+            <input type="search" placeholder="Search">
 
-            <button>English</button>
+            <button>
+                <img src="systemart-asssets/icon/search-svgrepo-com.svg" alt="search-icon">
+            </button>
 
         </div>
 
-    </div>
+        <!-- Bottom Navigation -->
+        <div class="bottom-header">
+
+            <button class="hamburger-menu" id="hamburger" aria-label="toggle navigation">
+                &#9776;
+                <span>MENU</span>
+            </button>
+            <div id="overlay" class="menu-overlay" aria-hidden="true"></div>
+            <div id="script">
+                <div class="navigationX">
+                    <span>Menu</span>
+                    <button>X</button>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Collections</a></li>
+                        <li><a href="#">Smart Devices</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="right-menu">
+
+                <button class="menu-btn">
+                    USD $
+                    <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+
+                <button class="menu-btn">
+                    English
+                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+
+            </div>
+
+        </div>
     </header>
     <main>
         <div class="categories-icon" id="hamburgerCat" aria-label="toggle navigation">
@@ -190,7 +234,7 @@
                 </div>
                 <div class="feature-item">
                     <img src="systemart-asssets/icon/discount-svgrepo-com.svg" alt="discount">
-                    <div class="feature-tex">
+                    <div class="feature-text">
                         <p class="feature-title">Member Discount</p>
                         <p class="feature-sub">Onevery order over $130.00</p>
                     </div>
@@ -255,7 +299,15 @@
             </div>
             <div class="dots"></div>
         </section>
-        <section></section>
+        <section class="offset-banner">
+            <div class="offset-img">
+                <img src="systemart-asssets/images/offer-banner-1.webp" alt="offset banner">
+            </div>
+            <div class="offset-label">
+                <h2>Strap Compatible For Mi Band 5 And <br>Mi Band 6 Wristband</h2>
+                <p>Perfect Fit to Band 5 and 6: Replacement Strap Only.</p>
+            </div>
+        </section>
         <section></section>
     </main>
 

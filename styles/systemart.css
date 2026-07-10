@@ -65,11 +65,11 @@
 }
 
 .logo-name{
-    font-size:1.5rem;
+    font-size:1.25rem;
     font-weight:bold;
     font-family: var(--Heading-font);
     color: var(--Primary-color);
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .header-icons{
@@ -103,11 +103,22 @@
     display:flex;
     justify-content:center;
     align-items:center;
+    font-family: var(--Body-font);
 }
 
 .search-bar{
     display:flex;
     margin:0 15px 15px;
+}
+
+/* search bar for desktop */
+.desktop-search-bar {
+    display: none;
+}
+
+/* Customer Hotlines */
+.top-header .desktop-feature-item {
+    display: none;
 }
 
 .search-bar input{
@@ -116,6 +127,10 @@
     border:2px solid #ddd;
     padding-left:15px;
     border-radius: 4px 0 0 4px;
+}
+
+.search-bar input:focus {
+    outline: 2px solid var(--Secondary-color);
 }
 
 .search-bar button{
@@ -158,8 +173,33 @@
 }
 
 .right-menu{
-    display:flex;
+    display: inline-flex;
     font-family: var(--Body-font);
+    align-items: center;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #555555;
+    transition: color 0.2s ease;
+}
+
+.menu-btn .chevron {
+    color: #666666;
+    transition: transform 0.2s ease;
+}
+
+.menu-btn:hover,
+.menu-btn:focus {
+  outline: none;
+  color: #000000; /* Darkens text slightly on interaction */
+}
+.menu-btn:focus .chevron {
+    transform: rotate(180deg);
 }
 
 .right-menu button{
@@ -175,6 +215,11 @@
     border-right:1px solid #ddd;
     padding: 0 12px;
     margin: 0 12px;
+}
+
+/* Desktop right menu */
+.desktop-right-menu {
+    display: none;
 }
 
 /* ---- Navigation / Hamburger ---- */
@@ -538,6 +583,7 @@ nav ul li a:hover {
 .categories h2 {
     margin-bottom: 20px;
     font-family: var(--Heading-font);
+    font-size: 1.2rem;
 }
 
 .categories-slider {
@@ -603,4 +649,53 @@ nav ul li a:hover {
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 2px;
+}
+
+/* offset Banner------ Will be displayed on large screen */
+.offset-banner {
+    display: none;
+    width: 100%;
+    position: relative;
+    padding: 0 14px;
+}
+
+.offset-img {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.offset-img img{
+    display: block;
+    height: auto;
+    width: 100%;
+    /* border-radius: 3px; */
+    transition: transform 1.2s ease-in-out;
+    cursor: pointer;
+}
+
+.offset-img:hover img {
+    transform: scale(1.05);
+}
+
+.offset-label {
+    position: absolute;
+    bottom: 14%;
+    z-index: 1;
+    font-family: var(--Body-font);
+}
+
+.offset-label h2 {
+    color: #fff;
+    font-size: clamp(0.8rem, 2.7vw, 2rem);
+    line-height: 1.4;
+    padding: 0 18px;
+}
+
+.offset-label p {
+    color: #fff;
+    padding: 0 18px;
+    padding-top: 8px;
+    word-spacing: 0.1em;
+    letter-spacing: 0.1em;
 }
