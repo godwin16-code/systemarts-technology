@@ -154,9 +154,29 @@
     justify-content:space-between;
     align-items:center;
     border-top:1px solid #ddd;
-    padding:15px;
+    padding: 0 0 0 14px;
     border-bottom: 1px solid #ddd;
+    width: 100%;
+    transition: all 0.3s ease;
 }
+
+.bottom-header.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    background: #fff;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,.12);
+}
+
+.bottom-header .flash-sale {
+    display: none;
+}
+/* .bottom-header-placeholder {
+    height: 60px;
+} */
 
 /* .hamburger-menu{
     display:flex;
@@ -176,6 +196,7 @@
     display: inline-flex;
     font-family: var(--Body-font);
     align-items: center;
+    padding-right: 12px;
 }
 
 .menu-btn {
@@ -248,6 +269,10 @@
     gap:10px;
     background:none;
     font-weight:bold;
+}
+
+#hamburgerDeskCat {
+    display: none;
 }
 
 .hamburger-menu:hover {
@@ -323,7 +348,9 @@
     color: #111827;
 }
 
-
+ .bottom-header-placeholder .desktop-menu-display ul {
+        display: none;
+    }
 
 nav ul {
     list-style: none;

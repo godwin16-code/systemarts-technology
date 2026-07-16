@@ -6,6 +6,7 @@ const overlay = document.getElementById("overlay");
 
 // ------Get Categories Navigation ------- //
 const hamburgerIconCat = document.getElementById("hamburgerCat");
+const hamburgerDeskCat = document.getElementById("hamburgerDeskCat");
 const navPanelCat = document.getElementById("scriptCat");
 const closeButtonCat = document.querySelector(".navigationXCat button");
 const overlayCat = document.getElementById("overlayCat");
@@ -25,15 +26,22 @@ if (hamburgerIconCat && navPanelCat && overlayCat) {
     hamburgerIconCat.addEventListener("click", () => togglePanel(hamburgerIconCat, navPanelCat, overlayCat));
 }
 
+if (hamburgerDeskCat && navPanelCat && overlayCat) {
+    hamburgerDeskCat.addEventListener("click", () => togglePanel(hamburgerDeskCat, navPanelCat, overlayCat));
+}
+
 // Close Button Display //
-function closeButtonDisplay(panel, icon, overlay) {
+function closeButtonDisplay(panel, icon, overlay, secondaryIcon = null) {
     panel.classList.remove("open");
     icon.classList.remove("open");
+    if (secondaryIcon) {
+        secondaryIcon.classList.remove("open");
+    }
     overlay.classList.remove("open");
 }
 
 if (closeButtonCat && navPanelCat && hamburgerIconCat && overlayCat) {
-    closeButtonCat.addEventListener("click", () => closeButtonDisplay(navPanelCat, hamburgerIconCat, overlayCat));
+    closeButtonCat.addEventListener("click", () => closeButtonDisplay(navPanelCat, hamburgerIconCat, overlayCat, hamburgerDeskCat));
 }
 
 if (closeButton && navPanel && hamburgerIcon && overlay) {
@@ -41,9 +49,12 @@ if (closeButton && navPanel && hamburgerIcon && overlay) {
 }
 
 // Overlay Display //
-function closePanel(panel, icon, overlay) {
+function closePanel(panel, icon, overlay, secondaryIcon = null) {
     panel.classList.remove("open");
     icon.classList.remove("open");
+    if (secondaryIcon) {
+        secondaryIcon.classList.remove("open");
+    }
     overlay.classList.remove("open");
 }
 
@@ -52,7 +63,7 @@ if (overlay && navPanel && hamburgerIcon) {
 }
 
 if (overlayCat && navPanelCat && hamburgerIconCat) {
-    overlayCat.addEventListener("click", () => closePanel(navPanelCat, hamburgerIconCat, overlayCat));
+    overlayCat.addEventListener("click", () => closePanel(navPanelCat, hamburgerIconCat, overlayCat, hamburgerDeskCat));
 }
 
 // -----Hero Slider ----- //
@@ -202,4 +213,19 @@ viewCard.forEach(card => {
 
     card.addEventListener("touchstart", showViewAll);
     card.addEventListener("touchend", restoreText);
+});
+
+const bottomHeader = document.querySelector(".bottom-header");
+
+// Distance from the top of the page
+const stickyPoint = bottomHeader.offsetTop;
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY >= stickyPoint) {
+        bottomHeader.classList.add("sticky");
+    } else {
+        bottomHeader.classList.remove("sticky");
+    }
+
 });

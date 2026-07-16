@@ -99,48 +99,73 @@
         </div>
 
         <!-- Bottom Navigation -->
-        <div class="bottom-header">
+       <div class="bottom-header-placeholder">
+             <div class="bottom-header">
 
-            <button class="hamburger-menu" id="hamburger" aria-label="toggle navigation">
-                &#9776;
-                <span>MENU</span>
-            </button>
-            <div id="overlay" class="menu-overlay" aria-hidden="true"></div>
-            <div id="script">
-                <div class="navigationX">
-                    <span>Menu</span>
-                    <button>X</button>
-                </div>
-                <nav>
+                <button class="hamburger-menu" id="hamburger" aria-label="toggle navigation">
+                    &#9776;
+                    <span>MENU</span>
+                </button>
+                <button class="hamburger-menu" id="hamburgerDeskCat" aria-label="toggle navigation">
+                    &#9776;
+                    <span class="desktop-hamburger-menu">SHOP BY CATEGORIES
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                    </span>
+                </button>
+                <nav class="desktop-menu-display">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#">Collections</a></li>
-                        <li><a href="#">Smart Devices</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#">SHOP</a></li>
+                        <li><a href="#">COLLECTIONS</a></li>
+                        <li><a href="#">SMART DEVICES</a></li>
+                        <li><a href="#">MORE</a></li>
                     </ul>
                 </nav>
+                <div class="flash-sale">
+                    <a href="#"><button>
+                        <img src="systemart-asssets/icon/flash-on-svgrepo-com.svg" alt="flash sale" width="28px">
+                        <p>FLASH DEAL</p>
+                    </button></a>
+                </div>
+                <div id="overlay" class="menu-overlay" aria-hidden="true"></div>
+                <div id="script">
+                    <div class="navigationX">
+                        <span>Menu</span>
+                        <button>X</button>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="#">Collections</a></li>
+                            <li><a href="#">Smart Devices</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="right-menu">
+
+                    <button class="menu-btn">
+                        USD $
+                        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                    <button class="menu-btn">
+                        English
+                        <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                </div>
+
             </div>
-
-            <div class="right-menu">
-
-                <button class="menu-btn">
-                    USD $
-                    <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-
-                <button class="menu-btn">
-                    English
-                    <svg class="chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
-                    </svg>
-                </button>
-
-            </div>
-
-        </div>
+       </div>
     </header>
     <main>
         <div class="categories-icon" id="hamburgerCat" aria-label="toggle navigation">
