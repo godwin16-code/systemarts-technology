@@ -106,21 +106,87 @@
                     &#9776;
                     <span>MENU</span>
                 </button>
-                <button class="hamburger-menu" id="hamburgerDeskCat" aria-label="toggle navigation">
-                    &#9776;
-                    <span class="desktop-hamburger-menu">SHOP BY CATEGORIES
-                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                    </span>
-                </button>
+                <div class="desktop-cat-dropdown">
+                    <button class="hamburger-menu" id="hamburgerDeskCat" aria-label="toggle navigation">
+                        &#9776;
+                        <span class="desktop-hamburger-menu">SHOP BY CATEGORIES
+                                <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                                </svg>
+                        </span>
+                    </button>
+                    <div id="scriptCat">
+                        <div class="navigationXCat">
+                            <span>Shop By Categories</span>
+                            <button>X</button>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><a href="index.html">Our Store</a></li>
+                                <li><a href="#">TV & Speaker</a></li>
+                                <li><a href="#">Smart Devices</a></li>
+                                <li><a href="#">Chargers and Cables</a></li>
+                                <li><a href="#">Laptop and Computers</a></li>
+                                <li><a href="#">Phones</a></li>
+                                <li><a href="#">Camera</a></li>
+                                <li><a href="#">Smart Watches</a></li>
+                                <li><a href="#">Home Theatre Systems</a></li>
+                                <li><a href="#">Televisions</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
                 <nav class="desktop-menu-display">
                     <ul>
                         <li><a href="index.html">HOME</a></li>
-                        <li><a href="#">SHOP</a></li>
+                        <li class="has-chevron dropdown-mega">
+                            <a href="#" class="dropdown-trigger">SHOP
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                            <!-- <div class="mega-menu">
+                                <div class="mega-column">
+                                    <h3>Cameras</h3>
+                                    <ul>
+                                        <li><a href="#">Backup Camera</a></li>
+                                        <li><a href="#">Digital Camera</a></li>
+                                        <li><a href="#">IP Camera</a></li>
+                                        <li><a href="#">Movie Camera</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="mega-column">
+                                    <h3>Phones</h3>
+                                    <ul>
+                                        <li><a href="#">Basic Phones</a></li>
+                                        <li><a href="#">Features Phones</a></li>
+                                        <li><a href="#">Iphones</a></li>
+                                        <li><a href="#">Smart Phones</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="mega-column">
+                                    <h3>TV & Speaker</h3>
+                                    <ul>
+                                        <li><a href="#">Home and Theatre Systems</a></li>
+                                        <li><a href="#">Party Speakers</a></li>
+                                        <li><a href="#">Televisions</a></li>
+                                        <li><a href="#">TV & Audio</a></li>
+                                    </ul>
+                                </div>
+                            </div> -->
+                        </a></li>
                         <li><a href="#">COLLECTIONS</a></li>
-                        <li><a href="#">SMART DEVICES</a></li>
-                        <li><a href="#">MORE</a></li>
+                        <li class="has-chevron"><a href="#">SMART DEVICES
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a></li>
+                        <li class="has-chevron"><a href="#">MORE
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a></li>
                     </ul>
                 </nav>
                 <div class="flash-sale">
@@ -174,26 +240,6 @@
             <span></span>
         </div>
         <div id="overlayCat" class="menu-overlay" aria-hidden="true"></div>
-        <div id="scriptCat">
-            <div class="navigationXCat">
-                <span>Shop By Categories</span>
-                <button>X</button>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Our Store</a></li>
-                    <li><a href="#">TV & Speaker</a></li>
-                    <li><a href="#">Smart Devices</a></li>
-                    <li><a href="#">Chargers and Cables</a></li>
-                    <li><a href="#">Laptop and Computers</a></li>
-                    <li><a href="#">Phones</a></li>
-                    <li><a href="#">Camera</a></li>
-                    <li><a href="#">Smart Watches</a></li>
-                    <li><a href="#">Home Theatre Systems</a></li>
-                    <li><a href="#">Televisions</a></li>
-                </ul>
-            </nav>
-        </div>
 
 
         <section class="hero">

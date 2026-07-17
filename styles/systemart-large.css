@@ -121,6 +121,7 @@
     .bottom-header {
         padding: 0 0 0 28px;
         gap: 8px;
+        height: 55px;
     }
 
     .hamburger-menu {
@@ -173,6 +174,9 @@
     }
 
     .bottom-header-placeholder .desktop-menu-display ul li a {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
         font-weight: 600;
         font-size: 14px;
         color: #000;
@@ -219,26 +223,31 @@
         overflow: visible;
     }
 
-    main #scriptCat {
+    .desktop-cat-dropdown {
+        position: relative;
+    }
+
+    .desktop-cat-dropdown #scriptCat {
         position: absolute;
-        left: 14.2%;
-        bottom: 0;
-        height: 70vh;
+        top: 100%;
+        left: 4.1%;
+        height: auto;
+        max-height: 70vh;
         width: 277.5px;
         display: block;
         z-index: 1001;
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
-        transform: translate(-50%, 100%);
+        transform: translateY(10px);
         transition: transform 0.2s ease, opacity 0.5s ease, visibility 0.4s ease;
     }
 
-    main #scriptCat.open {
+    .desktop-cat-dropdown #scriptCat.open {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translate(-50%, 0);
+        transform: translateY(0);
     }
 
     .navigationXCat {
