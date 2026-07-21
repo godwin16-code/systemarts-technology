@@ -137,14 +137,15 @@
                     </div>
                 </div>
                 <nav class="desktop-menu-display">
-                    <ul>
+                    <ul class="navlinks">
                         <li><a href="index.html">HOME</a></li>
                         <li class="has-chevron dropdown-mega">
                             <a href="#" class="dropdown-trigger">SHOP
                             <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
-                            <!-- <div class="mega-menu">
+                            </a>
+                            <div class="mega-menu">
                                 <div class="mega-column">
                                     <h3>Cameras</h3>
                                     <ul>
@@ -168,25 +169,45 @@
                                 <div class="mega-column">
                                     <h3>TV & Speaker</h3>
                                     <ul>
-                                        <li><a href="#">Home and Theatre Systems</a></li>
+                                        <li><a href="#">Home Theatre Systems</a></li>
                                         <li><a href="#">Party Speakers</a></li>
                                         <li><a href="#">Televisions</a></li>
                                         <li><a href="#">TV & Audio</a></li>
                                     </ul>
                                 </div>
-                            </div> -->
-                        </a></li>
+                            </div>
+                        </li>
                         <li><a href="#">COLLECTIONS</a></li>
-                        <li class="has-chevron"><a href="#">SMART DEVICES
+                        <li class="has-chevron dropdown-mega"><a href="#">SMART DEVICES
                             <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a></li>
-                        <li class="has-chevron"><a href="#">MORE
+                            </svg></a>
+
+                            <div class="mega-menu smart-devices">
+                                <div class="mega-column">
+                                    <ul>
+                                        <li><a href="#">Digital Watches</a></li>
+                                        <li><a href="#">Smart Cameras</a></li>
+                                        <li><a href="#">Smart Phones</a></li>
+                                        <li><a href="#">Smart Speakers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="has-chevron dropdown-mega"><a href="#">MORE
                             <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a></li>
+                            </svg></a>
+
+                            <div class="mega-menu smart-devices more">
+                                <div class="mega-column">
+                                    <ul>
+                                        <li><a href="#">BLOG</a></li>
+                                        <li><a href="#">CONTACT</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </nav>
                 <div class="flash-sale">
@@ -197,29 +218,135 @@
                 </div>
                 <div id="overlay" class="menu-overlay" aria-hidden="true"></div>
                 <div id="script">
-                    <div class="navigationX">
-                        <span>Menu</span>
-                        <button>X</button>
-                    </div>
-                    <nav>
+                   <div class="menu-page active" id="main-menu">
+                        <div class="navigationX">
+                            <span>Menu</span>
+                            <button>X</button>
+                        </div>
+                        <nav>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li class="has-submenu" data-target="shop-menu">
+                                    Shop
+                                    <span>→</span>
+                                </li>
+                                <li><a href="#">Collections</a></li>
+                                <li class="has-submenu" data-target="device-menu">
+                                    Smart Devices
+                                    <span>→</span>
+                                </li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                   </div>
+
+                   <!-- SHOP -->
+                    <div class="menu-page" id="shop-menu">
+                        <div class="navigationX">
+                            <span>Menu</span>
+                            <button>X</button>
+                        </div>
+
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="#">Collections</a></li>
-                            <li><a href="#">Smart Devices</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li class="back" data-back="main-menu"><span>←</span>Shop</li>
+                            <li class="has-submenu" data-target="camera-menu">
+                                Cameras
+                                <span>→</span>
+                            </li>
+                            <li class="has-submenu" data-target="phone-menu">
+                                Phones
+                                <span>→</span>
+                            </li>
+                            <li class="has-submenu" data-target="tv-speaker-menu">
+                                TV & Speaker
+                                <span>→</span>
+                            </li>
                         </ul>
-                    </nav>
+                    </div>
+
+                    <!-- Cameras -->
+                    <div class="menu-page" id="camera-menu">
+                        <div class="navigationX">
+                            <span>Menu</span>
+                            <button>X</button>
+                        </div>
+
+                        <ul class="cmenu">
+                            <li class="back" data-back="shop-menu"><span>←</span>Cameras</li>
+                            <li><a href="#">Backup Camera</a></li>
+                            <li><a href="#">Digital Camera</a></li>
+                            <li><a href="#">IP Camera</a></li>
+                            <li><a href="#">Movie Camera</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Phones -->
+                    <div class="menu-page" id="phone-menu">
+                        <div class="navigationX">
+                            <span>Menu</span>
+                            <button>X</button>
+                        </div>
+
+                        <ul class="cmenu">
+                            <li class="back" data-back="shop-menu"><span>←</span>Phones</li>
+                            <li><a href="#">Basic Phones</a></li>
+                            <li><a href="#">Feature Phones</a></li>
+                            <li><a href="#">IPhones</a></li>
+                            <li><a href="#">Smart Phones</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- TV & Speakers -->
+                    <div class="menu-page" id="tv-speaker-menu">
+                        <div class="navigationX">
+                            <span>Menu</span>
+                            <button>X</button>
+                        </div>
+
+                        <ul class="cmenu">
+                            <li class="back" data-back="shop-menu"><span>←</span>TV & Speaker</li>
+                            <li><a href="#">Home Theatre System</a></li>
+                            <li><a href="#">Party Speaker</a></li>
+                            <li><a href="#">Televisions</a></li>
+                            <li><a href="#">TV & Audio Accessories</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Smart Devices -->
+                     <div class="menu-page" id="device-menu">
+                        <div class="navigationX">
+                            <span>Menu</span>
+                            <button>X</button>
+                        </div>
+
+                        <ul class="cmenu">
+                            <li class="back" data-back="main-menu"><span>←</span>Smart Devices</li>
+                            <li><a href="#">Digital Watches</a></li>
+                            <li><a href="#">Smart Cameras</a></li>
+                            <li><a href="#">Smart Phones</a></li>
+                            <li><a href="#">Smart Speakers</a></li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="right-menu">
 
-                    <button class="menu-btn">
-                        USD $
-                        <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg>
-                    </button>
+                    <div class="dropdown">
+                        <button class="menu-btn" id="currencyBtn">
+                            USD $
+                            <svg class="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#">CAD $</a></li>
+                            <li><a href="#">EUR €</a></li>
+                            <li><a href="#">USD $</a></li>
+                        </ul>
+
+                    </div>
 
                     <button class="menu-btn">
                         English

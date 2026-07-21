@@ -4,60 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mega Dropdown Menu</title>
-  <link rel="stylesheet" href="styles/">
+  <link rel="stylesheet" href="styles/sample.css">
+  <script src="scripts/sample.js" defer></script>
 </head>
 <body>
 
-  <nav class="navbar">
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      
-      <!-- Mega Menu Parent Element -->
-      <li class="dropdown-mega">
-        <a href="#" class="dropdown-trigger">Shop Categories ▾</a>
-        
-        <!-- The Multi-Column Panel -->
-        <div class="mega-menu">
-          
-          <!-- Column 1: Cameras -->
-          <div class="mega-column">
-            <h3>Cameras</h3>
-            <ul>
-              <li><a href="#">Backup camera</a></li>
-              <li><a href="#">Digital Camera</a></li>
-              <li><a href="#">IP camera</a></li>
-              <li><a href="#">Movie camera</a></li>
-            </ul>
-          </div>
+  <div id="script">
 
-          <!-- Column 2: Phones -->
-          <div class="mega-column">
-            <h3>Phones</h3>
-            <ul>
-              <li><a href="#">Basic Phones</a></li>
-              <li><a href="#">Feature Phones</a></li>
-              <li><a href="#">Iphones</a></li>
-              <li><a href="#">Smart Phones</a></li>
-            </ul>
-          </div>
+    <!-- Main Menu -->
+    <div class="menu-page active" id="main-menu">
 
-          <!-- Column 3: TV & Speaker -->
-          <div class="mega-column">
-            <h3>TV & Speaker</h3>
-            <ul>
-              <li><a href="#">Home Theatre Systems</a></li>
-              <li><a href="#">Party Speakers</a></li>
-              <li><a href="#">Televisions</a></li>
-              <li><a href="#">TV & Audio Accessories</a></li>
-            </ul>
-          </div>
+        <div class="navigationX">
+            <span>MENU</span>
+            <button id="closeMenu">✕</button>
+        </div>
+
+        <ul>
+
+            <li><a href="#">Home</a></li>
+
+            <li class="has-submenu" data-target="shop-menu">
+                Shop
+                <span>→</span>
+            </li>
+
+            <li><a href="#">Collections</a></li>
+
+            <li class="has-submenu" data-target="device-menu">
+                Smart Devices
+                <span>→</span>
+            </li>
+
+            <li><a href="#">Blog</a></li>
+
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+
+    </div>
+
+    <!-- Shop -->
+    <div class="menu-page" id="shop-menu">
+
+        <div class="navigationX">
+
+            <button class="back" data-back="main-menu">
+                ←
+            </button>
+
+            <span>Shop</span>
 
         </div>
-      </li>
-      
-      <li><a href="#">About</a></li>
-    </ul>
-  </nav>
 
+        <ul>
+
+            <li class="has-submenu" data-target="camera-menu">
+                Cameras
+                <span>→</span>
+            </li>
+
+            <li>
+                Phones
+                <span>→</span>
+            </li>
+
+            <li>
+                TV & Speaker
+                <span>→</span>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Cameras -->
+    <div class="menu-page" id="camera-menu">
+
+        <div class="navigationX">
+
+            <button class="back" data-back="shop-menu">
+                ←
+            </button>
+
+            <span>Cameras</span>
+
+        </div>
+
+        <ul>
+
+            <li>Backup Camera</li>
+
+            <li>Digital Camera</li>
+
+            <li>IP Camera</li>
+
+            <li>Movie Camera</li>
+
+        </ul>
+
+    </div>
+
+</div>
 </body>
 </html>

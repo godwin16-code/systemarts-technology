@@ -1,7 +1,7 @@
 // -----Get Menu Navigation -----///
 const hamburgerIcon = document.getElementById("hamburger");
 const navPanel = document.getElementById("script");
-const closeButton = document.querySelector(".navigationX button");
+const closeButton = document.querySelectorAll(".navigationX button");
 const overlay = document.getElementById("overlay");
 
 // ------Get Categories Navigation ------- //
@@ -45,7 +45,10 @@ if (closeButtonCat && navPanelCat && hamburgerIconCat && overlayCat) {
 }
 
 if (closeButton && navPanel && hamburgerIcon && overlay) {
-    closeButton.addEventListener("click", () => closeButtonDisplay(navPanel, hamburgerIcon, overlay));
+    // closeButton.addEventListener("click", () => closeButtonDisplay(navPanel, hamburgerIcon, overlay));
+    closeButton.forEach(button => {
+        button.addEventListener("click", () => closeButtonDisplay(navPanel, hamburgerIcon, overlay));
+    });
 }
 
 // Overlay Display //
@@ -228,4 +231,68 @@ window.addEventListener("scroll", () => {
         bottomHeader.classList.remove("sticky");
     }
 
+});
+
+const menuPages = document.querySelectorAll(".menu-page");
+
+const submenuButtons = document.querySelectorAll(".has-submenu");
+
+const backButtons = document.querySelectorAll(".back");
+
+// Open Submenu
+submenuButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        menuPages.forEach(page=>{
+
+            page.classList.remove("active");
+
+        });
+
+        document
+        .getElementById(button.dataset.target)
+        .classList.add("active");
+
+    });
+
+});
+
+// Back Button
+backButtons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        menuPages.forEach(page=>{
+
+            page.classList.remove("active");
+
+        });
+
+        document
+        .getElementById(button.dataset.back)
+        .classList.add("active");
+
+    });
+
+});
+
+// Currency Options //
+const currencyBtn = document.getElementById("currencyBtn");
+const currencyMenu = document.querySelector(".dropdown-menu");
+const chevron = currencyBtn.querySelector(".chevron");
+
+currencyBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    currencyMenu.classList.toggle("show");
+    // Rotate Chevron //
+    chevron.classList.toggle("rotate");
+});
+
+// Close Currency Options when clicking outside // 
+document.addEventListener("click", () => {
+    currencyMenu.classList.remove("show");
+    // Rotate Chevron //
+    chevron.classList.remove("rotate");
 });
